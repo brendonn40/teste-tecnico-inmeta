@@ -1,7 +1,6 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 import { useLogin } from '@/features/auth/hooks/useLogin';
 import { toast } from 'sonner';
-import { jwtDecode } from 'jwt-decode';
 
 // Define the shape of the auth context
 interface AuthContextType {
@@ -37,7 +36,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         { email, password },
         {
           onSuccess: (data: any) => {
-            const decodedUser = jwtDecode(data.data.token);
+            const decodedUser = data.data.user;
             localStorage.setItem('token', data.data.token);
             localStorage.setItem('user', JSON.stringify(decodedUser));
             setToken(data.token);

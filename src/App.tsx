@@ -9,6 +9,8 @@ import { SignUp } from './pages/auth/sign-up'
 import NotFound from './components/error-pages/not-found'
 import AuthorizedLayout from './components/layouts/authorized-layout'
 import Home from './pages/home'
+import MyCards from './pages/my-cards'
+import Trades from './pages/trades'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -62,6 +64,12 @@ function App() {
     createRoutesFromElements([
       <Route path="/" element={<AuthorizedLayout />}>
         <Route index element={<Home />} />
+      </Route>,
+      <Route path="/my-cards" element={<AuthorizedLayout />}>
+        <Route index element={<MyCards />} />
+      </Route>,
+      <Route path="/trades" element={<AuthorizedLayout />}>
+        <Route index element={<Trades />} />
       </Route>,
       <Route path="/login" element={<AuthLayout />}>
         <Route index element={<SignIn />} />

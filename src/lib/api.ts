@@ -1,7 +1,8 @@
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_BASE_URL_API
+  // baseURL: import.meta.env.VITE_BASE_URL_API
+  baseURL: "https://cards-marketplace-api.onrender.com"
 });
 api.interceptors.request.use(
   (config) => {
