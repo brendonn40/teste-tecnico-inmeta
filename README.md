@@ -4,6 +4,7 @@ git clone https://github.com/brendonn40/teste-tecnico-inmeta
 
 2. Instalar dependências
 
+
 Se estiver usando npm:
 
 npm install
@@ -11,6 +12,8 @@ npm install
 Ou yarn:
 
 yarn
+
+
 3. Rodar o projeto
 npm run dev
 
